@@ -7,8 +7,12 @@ import (
 	log "github.com/sirupsen/logrus"
 )
 
-// main function of go
+// main
 func main() {
+	log.Info("This is a log line")
+	log.Warn("Another log line")
+	log.Error("This is a really bad")
+
 	http.Handle("/", loggingMiddleware(http.HandlerFunc(handler)))
 	http.ListenAndServe(":8080", nil)
 }
